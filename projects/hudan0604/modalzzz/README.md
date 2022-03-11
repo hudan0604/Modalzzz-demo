@@ -53,14 +53,14 @@ openModal(config: ModalConfig) {
         if (isModalValidated) {
             /**
              *  Here you can do what you want after knowing that the user has submitted the modal
-             * For example : if the modal contains a form, you would wqant to send this data to backend
+             * For example : if the modal contains a form, you would want to send this data to backend
              * if the server sends a 200 status: this.modalzService.close({ config });
              * If the server sends an error: you could keep the modal opened
             */
           }
         }
         /**
-         * This one has to be included in you code
+         * This one has to be included in your code
          * because if the user quits the modal,
          * next time he opens it,
          * the observable will still be emitting
