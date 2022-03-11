@@ -2,6 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@hudan0604/modalzzz": [
+        "dist/hudan0604/modalzzz/hudan0604-modalzzz",
+        "dist/hudan0604/modalzzz"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

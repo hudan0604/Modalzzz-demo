@@ -1,0 +1,12 @@
+<div
+  [ngClass]="{
+    wraper: true,
+    'wraper--opened': config?.open
+  }"
+  (onclick)="closeModal()"
+>
+  <lib-modal-content
+    [config]="config"
+    (closeModal)="closeModal()"
+  ></lib-modal-content>
+</div>

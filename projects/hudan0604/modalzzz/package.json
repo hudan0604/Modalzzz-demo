@@ -1,0 +1,19 @@
+{
+  "name": "@hudan0604/modalzzz",
+  "version": "1.0.0",
+  "description": "A library that enables users to easily add diferent types of modals to their projects: confirm, warning, and custom modal",
+  "author": "Nicolas Hudavert",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hudan0604/Modalzzz-demo"
+  },
+  "keywords": ["angular", "typescript", "modals"],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

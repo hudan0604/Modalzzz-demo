@@ -1,0 +1,115 @@
+<lib-modalzzz></lib-modalzzz>
+
+<div class="wraper">
+  <h1>Try the different types of modals</h1>
+
+  <div class="example">
+    <h3>Confirmation Modal</h3>
+
+    <button (click)="openModal({ type: 'confirm' })">Click me !</button>
+  </div>
+
+  <div class="example">
+    <h3>Warning Modal</h3>
+
+    <button (click)="openModal({ type: 'warning' })">Click me !</button>
+  </div>
+
+  <h3>Custom Modal</h3>
+
+  <div class="custom-modal--wraper">
+    <div class="example" [ngStyle]="{ marginRight: '1.6rem' }">
+      <p>
+        - Title (default background) <br />
+        - Custom text for body
+        <br />
+        - Buttons: <br />
+        default background <br />
+        custom text
+      </p>
+
+      <button
+        (click)="
+          openModal({
+            type: 'custom',
+            title: 'Custom Modal',
+            body: 'Title with default bg, buttons with default bg',
+            customStyles: {
+              body: {
+                background: '#fabee3'
+              },
+              buttons: {
+                submitBtn: {
+                  title: 'Custom text'
+                }
+              }
+            }
+          })
+        "
+      >
+        Click me !
+      </button>
+    </div>
+
+    <div class="example" [ngStyle]="{ marginRight: '1.6rem' }">
+      <p>
+        - Title (custom background) <br />
+        - Custom text for body
+        <br />
+        - Buttons : <br />
+        custom background <br />
+        custom text
+      </p>
+
+      <button
+        (click)="
+          openModal({
+            type: 'custom',
+            title: 'Other title !',
+            body: 'Title with custom bg, custom buttons',
+            customStyles: {
+              title: {
+                background: 'purple',
+                color: 'white'
+              },
+              body: {
+                background: '#7b5de8'
+              },
+              buttons: {
+                cancelBtn: {
+                  background: 'rgb(225 127 33)'
+                },
+                submitBtn: {
+                  title: 'Other text',
+                  background: '#da2c4b'
+                }
+              }
+            }
+          })
+        "
+      >
+        Click me !
+      </button>
+    </div>
+
+    <div class="example">
+      <p>
+        - No title <br />
+        - Custom text for body
+        <br />
+        - No buttons
+      </p>
+
+      <button
+        (click)="
+          openModal({
+            type: 'custom',
+            body: 'No title and no buttons'
+          })
+        "
+      >
+        Click me !
+      </button>
+    </div>
+  </div>
+</div>

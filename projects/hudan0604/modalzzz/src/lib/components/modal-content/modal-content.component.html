@@ -1,0 +1,84 @@
+<div
+  [ngClass]="{
+    wraper: true,
+    'wraper--opened': config?.open,
+    'wraper--warning': config?.type === 'warning',
+    'wraper--confirm': config?.type === 'confirm'
+  }"
+  [ngStyle]="{
+    background:
+      config?.type === 'custom' && !config?.customStyles?.body?.background
+        ? 'white'
+        : null
+  }"
+>
+  <h1
+    *ngIf="config?.title && config?.type === 'custom'"
+    class="title"
+    [ngStyle]="{
+      background: config?.customStyles?.title?.background,
+      color: config?.customStyles?.title?.color
+    }"
+  >
+    {{ config?.title }}
+  </h1>
+  <img
+    (click)="closeModal()"
+    class="cross"
+    alt="close-modal"
+    src="assets/svg/close.svg"
+  />
+  <div
+    class="wraper--content"
+    [ngStyle]="{
+      background: config?.customStyles?.body?.background,
+      color: config?.customStyles?.title?.color,
+      borderTopLeftRadius: !config?.title ? '4px' : null,
+      borderTopRightRadius: !config?.title ? '4px' : null
+    }"
+  >
+    <div
+      [ngClass]="{
+        body: true,
+        'body--warning': config?.type === 'warning'
+      }"
+    >
+      {{ handleBody() }}
+    </div>
+    <div
+      class="buttons"
+      *ngIf="config?.customStyles?.buttons || config?.type !== 'custom'"
+    >
+      <button
+        [ngClass]="{
+          btn: true,
+          'btn--cancel': !config?.customStyles?.buttons?.cancelBtn
+        }"
+        [ngStyle]="{
+          background: config?.customStyles?.buttons?.cancelBtn?.background,
+          color: config?.customStyles?.buttons?.cancelBtn?.color
+        }"
+        (click)="closeModal()"
+      >
+        Annuler
+      </button>
+      <button
+        [ngClass]="{
+          btn: true,
+          'btn--confirm': config?.type === 'confirm',
+          'btn--warning': config?.type === 'warning',
+          'btn--standard':
+            config?.type === 'custom' &&
+            !config?.customStyles?.buttons?.submitBtn?.background
+        }"
+        [ngStyle]="{
+          background: config?.customStyles?.buttons?.submitBtn?.background,
+          color: config?.customStyles?.buttons?.submitBtn?.color
+        }"
+        (click)="validateModal()"
+      >
+        {{ config?.customStyles?.buttons?.submitBtn?.title || "Confirmer" }}
+      </button>
+    </div>
+  </div>
+</div>
