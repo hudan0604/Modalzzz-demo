@@ -17,6 +17,32 @@ Visit https://github.com/hudan0604/Modalzzz-demo for the demo
 ```
 
 - Then, in your app.module.ts file, add 'ModalzzzModule' to the 'imports' of the module
+- In 'angular.json' file, inside the 'assets' array :
+
+```json
+ "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/test",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": []
+```
+
+**Add this configuration object (in order to see the close icon of the modal)** :
+
+```json
+{
+  "glob": "**/*",
+  "input": "node_modules/@hudan0604/modalzzz/assets/",
+  "output": "/assets"
+}
+```
+
 - In your app.component.html file, add the selector of the modal component :
   `<lib-modalzzz></lib-modalzzz>`
 
