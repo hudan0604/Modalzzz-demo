@@ -15,7 +15,6 @@
           "options": {
             "project": "projects/hudan0604/modalzzz/ng-package.json"
           },
-            
           "configurations": {
             "production": {
               "tsConfig": "projects/hudan0604/modalzzz/tsconfig.lib.prod.json"
@@ -64,7 +63,7 @@
               "projects/demo/src/assets",
               {
                 "glob": "**/*",
-                "input": "projects/hudan0604/modalzzz/src/assets/",
+                "input": "projects/hudan0604/modalzzz/assets/",
                 "output": "/assets"
               }
             ],
